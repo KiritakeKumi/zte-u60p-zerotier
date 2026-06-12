@@ -6,7 +6,9 @@ STOP_CMD="sh $Module_dir/service.sh stop"
 FILE="/etc/rc.local"
 
 # ZeroTier 静态 ARM64 二进制来源
-DOWNLOAD_URL="https://github.com/rafalb8/ZeroTierOne-Static/releases/download/1.16.0/zerotier-one-aarch64.tar.gz"
+#DOWNLOAD_URL="https://github.com/rafalb8/ZeroTierOne-Static/releases/download/1.16.0/zerotier-one-aarch64.tar.gz"
+# 如遇github速度慢可选择下面的链接
+DOWNLOAD_URL="https://niconiconi.us/zerotier-one-aarch64.tar.gz"
 
 write_service_sh() {
     cat >"$Module_dir/service.sh" <<'EOF'
