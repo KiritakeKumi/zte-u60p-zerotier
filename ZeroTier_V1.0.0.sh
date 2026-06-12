@@ -150,6 +150,12 @@ install() {
         exit 1
     fi
 
+    # 如果解压后在 bin/ 子目录里，移出来
+    if [ -d "$Module_dir/bin" ]; then
+        mv "$Module_dir/bin/"* "$Module_dir/" 2>/dev/null
+        rmdir "$Module_dir/bin" 2>/dev/null
+    fi
+
     rm -f "$Module_dir/zerotier-one-aarch64.tar.gz"
     [ -f "$Module_dir/$BIN_NAME" ] && chmod 755 "$Module_dir/$BIN_NAME"
 
